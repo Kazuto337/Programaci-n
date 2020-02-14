@@ -14,11 +14,12 @@ namespace BlackJack
             while (Total < 21 && Continuar == true)
             {
 
-                if (PrimeraV == true )
+                
+                if (PrimeraV == true)
                 {
                     PrimeraV = false;
-                    carta1 = aleatorio.Next(1, 12);
-                    carta2 = aleatorio.Next(1, 12);
+                    carta1 = /*10*/aleatorio.Next(1, 12);
+                    carta2 = /*11*/aleatorio.Next(1, 12);
                     Total = Total + carta1 + carta2;
                     Console.WriteLine("Sus Cartas son... " + "Carta 1 = " + carta1 + " Carta 2 = " + carta2 + " el total es de " + Total);
 
@@ -26,6 +27,7 @@ namespace BlackJack
                     if (Total == 21)
                     {
                         Console.WriteLine("Felicidades ¡BlackJack! :D");
+                        break;
                     }
                 }
                 else
