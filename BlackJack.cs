@@ -17,8 +17,8 @@ namespace BlackJack
                 if (PrimeraV == true )
                 {
                     PrimeraV = false;
-                    carta1 = aleatorio.Next(1, 11);
-                    carta2 = aleatorio.Next(1, 11);
+                    carta1 = aleatorio.Next(1, 12);
+                    carta2 = aleatorio.Next(1, 12);
                     Total = Total + carta1 + carta2;
                     Console.WriteLine("Sus Cartas son... " + "Carta 1 = " + carta1 + " Carta 2 = " + carta2 + " el total es de " + Total);
 
@@ -30,7 +30,7 @@ namespace BlackJack
                 }
                 else
                 {
-                    carta1 = aleatorio.Next(1, 11);
+                    carta1 = aleatorio.Next(1, 12);
                     Total = Total + carta1;
                     Console.WriteLine("Sus Cartas son... " + "Carta nueva = " + carta1 + " el total es de " + Total);
                 }
