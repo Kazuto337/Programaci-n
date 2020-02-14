@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace BlackJack
 {
@@ -8,14 +8,13 @@ namespace BlackJack
         {
             Random aleatorio = new Random();
             int carta1 = 0, carta2 = 0, Total = 0;
-            string continuar = "s";
-            bool PrimeraV = true;
+            bool PrimeraV = true, Continuar = true;
 
 
-            while (Total < 21)
+            while (Total < 21 && Continuar == true)
             {
-                
-                if (PrimeraV == true)
+
+                if (PrimeraV == true )
                 {
                     PrimeraV = false;
                     carta1 = aleatorio.Next(1, 11);
@@ -24,28 +23,37 @@ namespace BlackJack
                     Console.WriteLine("Sus Cartas son... " + "Carta 1 = " + carta1 + " Carta 2 = " + carta2 + " el total es de " + Total);
 
 
-                     if (Total == 21)
+                    if (Total == 21)
                     {
                         Console.WriteLine("Felicidades ¡BlackJack! :D");
                     }
-                }                
+                }
                 else
                 {
                     carta1 = aleatorio.Next(1, 11);
                     Total = Total + carta1;
                     Console.WriteLine("Sus Cartas son... " + "Carta nueva = " + carta1 + " el total es de " + Total);
                 }
-                if (Total > 21) {
+                if (Total > 21)
+                {
                     Console.WriteLine("GameOver");
                 }
                 else
                 {
-
                     Console.WriteLine("Su total actual es de " + Total);
                     Console.WriteLine("Desea continuar S/N");
-                    continuar = Console.ReadLine();
+                    if(Console.ReadLine().Equals("s"))
+                    {
+                        Continuar = true;
+                    }
+                    else
+                    {
+                        Continuar = false;
+                    }
+                    
+
                 }
-                
+
             }
 
         }
